@@ -1,0 +1,14 @@
+{
+  "name": "gabin-ice-cream",
+  "private": true,
+  "workspaces": ["storefront", "admin"],
+  "scripts": {
+    "predev": "node scripts/env.mjs",
+    "dev": "concurrently -n storefront,admin -c magenta,cyan \"npm run dev -w storefront\" \"npm run dev -w admin\"",
+    "build:storefront": "npm run build -w storefront",
+    "build:admin": "npm run build -w admin"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
